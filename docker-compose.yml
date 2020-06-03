@@ -7,6 +7,9 @@ services:
       context: .
     volumes:
       - '.:/usr/src/app'
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=truetone
     ports:
       - 5000:5000
-    command: bash -c "export FLASK_APP=./app/app.py && flask run --host=0.0.0.0"
+    command: bash -c "pip install -e . && flask run --host=0.0.0.0"
