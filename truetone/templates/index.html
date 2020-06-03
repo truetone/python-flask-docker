@@ -1,3 +1,11 @@
-<!doctype html>
-<title>Truetone</title>
-<h1>Truetone</h1>
+{% extends "layout/base.html" %}
+{% block title %}Tony Thomas{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h1>Tony Thomas</h1>
+  <p class="important">
+    Welcome to my awesome homepage.
+  </p>
+{% endblock %}
