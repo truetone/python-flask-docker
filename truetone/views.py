@@ -13,4 +13,5 @@ def favicon():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    entries = os.scandir('content/')
+    return render_template('index.html', entries=entries)
