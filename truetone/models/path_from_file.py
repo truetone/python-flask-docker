@@ -8,6 +8,13 @@ class PathFromFile:
 
     @classmethod
     def build(cls, filename_with_path):
-        filename = filename_with_path.split('/')[-1]
-        slug = os.path.splitext(filename)[0].replace("_", "-")
+        slug = cls.__slug(cls.__filename(filename_with_path))
         return cls(slug)
+
+    @staticmethod
+    def __filename(filename_with_path):
+        return filename_with_path.split('/')[-1]
+
+    @staticmethod
+    def __slug(filename):
+        return os.path.splitext(filename)[0].replace("_", "-")
