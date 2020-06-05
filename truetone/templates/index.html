@@ -5,12 +5,14 @@
 {% endblock %}
 {% block content %}
   <h1>Tony Thomas</h1>
-  <p class="important">
-    Welcome to my awesome homepage.
-  </p>
-  <pre>
-    {% for entry in entries %}
-      {{ entry.name }}
-    {% endfor %}
-  </pre>
+  <div class="grid">
+    <div>
+      <p class="important">
+        Welcome to my awesome homepage.
+      </p>
+    </div>
+    <div>
+      Grid two.
+    </div>
+  </div>
 {% endblock %}

@@ -24,16 +24,18 @@
   {% endblock %}
 </head>
 <body>
-  <header id="header">
-    {% block header %}
-    {% endblock %}
-  </header>
-  <main id="content">
-    {% block content %}{% endblock %}
-  </main>
-  <footer id="footer">
-    {% block footer %}
-    {% endblock %}
-  </footer>
+  <div class="base-grid">
+    <header id="header">
+      {% block header %}
+      {% endblock %}
+    </header>
+    <main id="content">
+      {% block content %}{% endblock %}
+    </main>
+    <footer id="footer">
+      {% block footer %}
+      {% endblock %}
+    </footer>
+  </div>
 </body>
 </html>

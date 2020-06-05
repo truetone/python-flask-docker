@@ -3,6 +3,11 @@ body {
   font: 12px system-ui;
 }
 
+.base-grid {
+  display: grid;
+  grid-template-columns: auto 800px auto;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
