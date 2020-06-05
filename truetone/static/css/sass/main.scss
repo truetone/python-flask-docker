@@ -1,6 +1,22 @@
+@import "variables";
+
+a {
+  color: $red;
+
+  &:hover, :visited {
+    color: $green;
+  }
+}
+
 body {
+  color: $black;
+  font: 18px system-ui;
+  line-height: 1.4;
   margin: 2rem;
-  font: 12px system-ui;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $blue;
 }
 
 .base-grid {
@@ -14,8 +30,6 @@ body {
   grid-gap: 1rem;
 
   &> div {
-    background: #EDE7F6;
     padding: 1.5rem;
-    border-radius: 1rem;
   }
 }
