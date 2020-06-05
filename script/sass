@@ -4,4 +4,8 @@ set -e
 
 cd "$(dirname "$0")/.."
 
+echo "Rendering sass..."
+
 docker-compose exec web sass /usr/src/app/truetone/static/css/sass/main.scss /usr/src/app/truetone/static/css/index.css
+
+echo "truetone/static/css/index.css re-rendered"
