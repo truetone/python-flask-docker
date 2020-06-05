@@ -25,13 +25,26 @@
 </head>
 <body>
   <div class="base-grid">
+    <div></div>
     <header id="header">
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/resume">Resume</a></li>
+        </ul>
+      </nav>
       {% block header %}
       {% endblock %}
     </header>
+  </div>
+  <div class="base-grid">
+    <div></div>
     <main id="content">
       {% block content %}{% endblock %}
     </main>
+  </div>
+  <div class="base-grid">
+    <div></div>
     <footer id="footer">
       {% block footer %}
       {% endblock %}
