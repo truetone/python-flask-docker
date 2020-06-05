@@ -1,6 +1,7 @@
 import os
 from truetone import app
 from truetone.models import content
+from truetone.models import content_metadata
 from flask import render_template
 from flask import send_from_directory
 from flask import abort
@@ -17,7 +18,8 @@ def favicon():
 
 @app.route('/')
 def index():
-    entries = os.scandir('content/')
+    cwd = os.path.dirname(os.path.realpath(__file__))
+    entries = content_metadata.ContentMetadata.build(f'{cwd}/content').metadata
     return render_template('index.html', entries=entries)
 
 

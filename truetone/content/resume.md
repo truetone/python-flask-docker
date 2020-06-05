@@ -1,3 +1,8 @@
+---
+author: Tony Thomas
+title: "Resume"
+blog_entry: false
+---
 # Tony Thomas
 
 * [anthonygthomas.com](http://www.anthonygthomas.com)
