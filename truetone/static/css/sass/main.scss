@@ -36,6 +36,14 @@ nav {
   }
 }
 
+.profile-img {
+  border-radius: 50%;
+  float: left;
+  max-width: 200px;
+  overflow: hidden;
+  margin-right: 1rem;
+}
+
 .base-grid {
   display: grid;
   grid-template-columns: auto 800px auto;
