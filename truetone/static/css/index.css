@@ -1,0 +1,54 @@
+a {
+  color: #853133;
+}
+a:hover, a :visited {
+  color: #00593C;
+}
+
+body {
+  color: #170000;
+  font: 18px system-ui;
+  line-height: 1.4;
+  margin: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #005372;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  float: left;
+  list-style: none;
+}
+nav a {
+  display: block;
+  padding: 0.5rem;
+}
+
+.profile-img {
+  border-radius: 50%;
+  float: left;
+  max-width: 200px;
+  overflow: hidden;
+  margin-right: 1rem;
+}
+
+.base-grid {
+  display: grid;
+  grid-template-columns: auto 800px auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem;
+}
+.grid > div {
+  padding: 1.5rem;
+}
+
+/*# sourceMappingURL=index.css.map */
