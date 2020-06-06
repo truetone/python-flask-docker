@@ -39,6 +39,12 @@ nav {
 .base-grid {
   display: grid;
   grid-template-columns: 1rem auto 1rem;
+
+  & >main,
+  & >header,
+  & >footer {
+    grid-column-start: 2;
+  }
 }
 
 .profile-img {
@@ -52,6 +58,12 @@ nav {
   .base-grid {
     display: grid;
     grid-template-columns: auto 800px auto;
+
+    & >main,
+    & >header,
+    & >footer {
+      grid-column-start: 2;
+    }
   }
 
   .profile-img {
