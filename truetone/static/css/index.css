@@ -31,7 +31,11 @@ nav a {
 
 .base-grid {
   display: grid;
+  grid-column-start: 2;
   grid-template-columns: 1rem auto 1rem;
+}
+.base-grid > main, .base-grid > header, .base-grid > footer {
+  grid-column-start: 2;
 }
 
 .profile-img {
@@ -45,6 +49,9 @@ nav a {
   .base-grid {
     display: grid;
     grid-template-columns: auto 800px auto;
+  }
+  .base-grid > main, .base-grid > header, .base-grid > footer {
+    grid-column-start: 2;
   }
 
   .profile-img {
