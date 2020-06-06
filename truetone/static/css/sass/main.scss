@@ -36,17 +36,31 @@ nav {
   }
 }
 
+.base-grid {
+  display: grid;
+  grid-template-columns: 1rem auto 1rem;
+}
+
 .profile-img {
   border-radius: 50%;
-  float: left;
-  max-width: 200px;
+  max-width: 100%;
   overflow: hidden;
   margin-right: 1rem;
 }
 
-.base-grid {
-  display: grid;
-  grid-template-columns: auto 800px auto;
+@media all and (min-width: 800px) {
+  .base-grid {
+    display: grid;
+    grid-template-columns: auto 800px auto;
+  }
+
+  .profile-img {
+    border-radius: 50%;
+    float: left;
+    max-width: 200px;
+    overflow: hidden;
+    margin-right: 1rem;
+  }
 }
 
 .grid {
