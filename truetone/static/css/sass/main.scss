@@ -51,26 +51,16 @@ nav {
   border-radius: 50%;
   max-width: 100%;
   overflow: hidden;
-  margin-right: 1rem;
 }
 
 @media all and (min-width: 800px) {
   .base-grid {
-    display: grid;
     grid-template-columns: auto 800px auto;
-
-    & >main,
-    & >header,
-    & >footer {
-      grid-column-start: 2;
-    }
   }
 
   .profile-img {
-    border-radius: 50%;
     float: left;
     max-width: 200px;
-    overflow: hidden;
     margin-right: 1rem;
   }
 }
