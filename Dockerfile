@@ -8,8 +8,6 @@ COPY . .
 
 RUN apt update && apt install -y ruby nodejs npm
 
-RUN gem install bourbon
-
 RUN npm install -g sass
 
 RUN pip install -r ./requirements.txt
