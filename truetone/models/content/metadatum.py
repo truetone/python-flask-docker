@@ -1,5 +1,5 @@
 import frontmatter
-from truetone.models import path_from_file
+from truetone.utils.path_from_file import PathFromFile
 
 
 class ContentMetadatum:
@@ -8,7 +8,7 @@ class ContentMetadatum:
     def build(cls, path):
         with open(path, "r", encoding="utf-8") as input_file:
             fm = frontmatter.loads(input_file.read())
-        slug = path_from_file.PathFromFile.build(path).slug
+        slug = PathFromFile.build(path).slug
 
         return cls(slug, fm.metadata)
 
