@@ -1,5 +1,5 @@
 import glob
-from truetone.models import content_metadatum
+from truetone.models.content.metadatum import ContentMetadatum
 
 
 class ContentMetadata:
@@ -10,7 +10,7 @@ class ContentMetadata:
 
     @classmethod
     def __build_metadata(cls, directory):
-        return list(map(content_metadatum.ContentMetadatum.build,
+        return list(map(ContentMetadatum.build,
                     cls.__markdown_files(directory)))
 
     @staticmethod

@@ -1,7 +1,7 @@
 import os
 from truetone import app
-from truetone.models import content
-from truetone.models import content_metadata
+from truetone.models.content.content import Content
+from truetone.models.content.metadata import ContentMetadata
 from flask import render_template
 from flask import send_from_directory
 from flask import abort
@@ -19,7 +19,7 @@ def favicon():
 @app.route('/')
 def index():
     cwd = os.path.dirname(os.path.realpath(__file__))
-    entries = content_metadata.ContentMetadata.build(f'{cwd}/content').metadata
+    entries = ContentMetadata.build(f'{cwd}/content').metadata
     return render_template('index.html', entries=entries)
 
 
@@ -28,7 +28,7 @@ def from_markdown(slug):
     cwd = os.path.dirname(os.path.realpath(__file__))
     file_path = f'{cwd}/content/{slug}.md'
     if path.exists(file_path):
-        raw_html = content.Content.build(file_path).html
+        raw_html = Content.build(file_path).html
         return render_template('markdown.html', raw_html=raw_html)
     else:
         abort(404)
