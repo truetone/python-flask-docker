@@ -1,2 +1,4 @@
 **/__pycache__
 truetone.egg-info
+node_modules
+truetone/static/js/dist
