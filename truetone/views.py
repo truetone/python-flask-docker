@@ -28,7 +28,9 @@ def from_markdown(slug):
     cwd = os.path.dirname(os.path.realpath(__file__))
     file_path = f'{cwd}/content/{slug}.md'
     if path.exists(file_path):
-        raw_html = Content.build(file_path).html
-        return render_template('markdown.html', raw_html=raw_html)
+        content = Content.build(file_path)
+        return render_template('markdown.html',
+                               raw_html=content.html,
+                               title=content.metadata["title"])
     else:
         abort(404)
