@@ -6,12 +6,18 @@ class ContentMetadata:
 
     @classmethod
     def build(cls, directory):
-        return cls(cls.__build_metadata(directory))
+        metadata = cls.__build_metadata(directory)
+        blog_entries = cls.__blog_entries(metadata)
+        return cls(metadata, blog_entries)
 
     @classmethod
     def __build_metadata(cls, directory):
         return list(map(ContentMetadatum.build,
                     cls.__markdown_files(directory)))
+
+    @classmethod
+    def __blog_entries(cls, metadata):
+        return list(filter(cls.__is_blog_entry, metadata))
 
     @staticmethod
     def __markdown_files(directory):
@@ -21,9 +27,6 @@ class ContentMetadata:
     def __is_blog_entry(entry):
         return entry.is_blog_entry
 
-    def __init__(self, metadata):
+    def __init__(self, metadata, blog_entries):
         self.metadata = metadata
-        self.blog_entries = self.__blog_entries()
-
-    def __blog_entries(self):
-        return list(filter(self.__is_blog_entry, self.metadata))
+        self.blog_entries = blog_entries
