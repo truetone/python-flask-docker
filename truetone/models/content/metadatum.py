@@ -16,3 +16,7 @@ class ContentMetadatum:
         self.slug = slug
         self.metadata = metadata
         self.title = metadata["title"]
+        self.is_blog_entry = self.__is_blog_entry()
+
+    def __is_blog_entry(self):
+        return self.metadata.get('blog_entry', False) is True
