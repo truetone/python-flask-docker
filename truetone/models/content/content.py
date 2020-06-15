@@ -5,7 +5,13 @@ import frontmatter
 class Content():
     @classmethod
     def build(cls, path):
-        return cls(cls.__load(path))
+        fm = cls.__load(path)
+        html = cls.__html(fm.content)
+        return cls(fm.content, fm.metadata, html)
+
+    @staticmethod
+    def __html(raw_text):
+        return markdown.markdown(raw_text)
 
     @staticmethod
     def __load(path):
@@ -13,10 +19,7 @@ class Content():
             fm = frontmatter.loads(input_file.read())
         return fm
 
-    def __init__(self, frontmatter):
-        self.text = frontmatter.content
-        self.metadata = frontmatter.metadata
-        self.html = self.__get_html()
-
-    def __get_html(self):
-        return markdown.markdown(self.text)
+    def __init__(self, raw_text, metadata, html):
+        self.text = raw_text
+        self.metadata = metadata
+        self.html = html
