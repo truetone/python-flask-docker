@@ -23,6 +23,11 @@ def index():
     return render_template('index.html', entries=entries)
 
 
+@app.route('/sunna')
+def sunna():
+    return render_template('sunna.html')
+
+
 @app.route('/<slug>')
 def from_markdown(slug):
     cwd = os.path.dirname(os.path.realpath(__file__))
