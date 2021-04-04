@@ -28,6 +28,11 @@ def sunna():
     return render_template('sunna.html')
 
 
+@app.route('/umari')
+def umari():
+    return render_template('umari.html')
+
+
 @app.route('/<slug>')
 def from_markdown(slug):
     cwd = os.path.dirname(os.path.realpath(__file__))
