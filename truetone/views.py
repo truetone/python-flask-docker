@@ -33,6 +33,11 @@ def umari():
     return render_template('umari.html')
 
 
+@app.route('/colorful-dream')
+def colorful_dream():
+    return render_template('colorful-dream.html')
+
+
 @app.route('/<slug>')
 def from_markdown(slug):
     cwd = os.path.dirname(os.path.realpath(__file__))
