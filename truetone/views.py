@@ -38,6 +38,11 @@ def colorful_dream():
     return render_template('colorful-dream.html')
 
 
+@app.route('/audio-api')
+def audio_api():
+    return render_template('audio-api.html')
+
+
 @app.route('/<slug>')
 def from_markdown(slug):
     cwd = os.path.dirname(os.path.realpath(__file__))
