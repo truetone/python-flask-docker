@@ -38,6 +38,11 @@ def colorful_dream():
     return render_template('colorful-dream.html')
 
 
+@app.route('/only-love-resides')
+def only_love():
+    return render_template('only-love.html')
+
+
 @app.route('/<slug>')
 def from_markdown(slug):
     cwd = os.path.dirname(os.path.realpath(__file__))
